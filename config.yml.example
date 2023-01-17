@@ -1,0 +1,9 @@
+clients:
+  - ssh:
+      host: 1.14.5.14
+      port: 19191
+      user: root
+      password: this_is_password
+    forwards:
+      - remote: 7860
+        local: 7860
