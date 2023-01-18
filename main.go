@@ -42,7 +42,8 @@ func (f *Forwarder) run() {
 	log.Println("Tunnel running with", "localhost:"+f.localPort)
 	listener, err := net.Listen("tcp", "localhost:"+f.localPort)
 	if err != nil {
-		log.Fatal(err)
+		log.Printf("listen on %s error %s", f.localPort, err.Error())
+		return
 	}
 	defer listener.Close()
 	for {
